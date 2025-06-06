@@ -82,8 +82,155 @@
                 </div>
             </div>
         </div>
+        <div class="photo-gallery">
+            <div class="gallery-container" id="photoGallery">
+                <div class="gallery-slides">
+                    <div class="gallery-slide">
+                        <img src="Entrance1.JPG" alt="Entrance-view">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Entrance-view</h3>
+                            <p class="slide-description">Our residents love spending time in the garden, enjoying the fresh air and sunshine.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="fr1.JPG" alt="front-view">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Front-view</h3>
+                            <p class="slide-description">Comfortable spaces for reading, reflection, and peaceful solitude are always available.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="sd1.JPG" alt="fish-tanak">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Side-View</h3>
+                            <p class="slide-description">Engaging craft sessions help stimulate minds and foster community among residents.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="ph.JPG" alt="Residents celebrating a birthday together">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Pyramid</h3>
+                            <p class="slide-description">Birthdays and special occasions are cherished moments, celebrated with joy and togetherness.</p>
+                        </div>
+                    </div>
+                    </div>
+        
+                <button class="gallery-nav prev" onclick="changeSlide(-1)">❮</button>
+                <button class="gallery-nav next" onclick="changeSlide(1)">❯</button>
+            </div>
+            <div class="gallery-dots" id="galleryDots"></div>
+        </div>
     </section>
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
 
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+        });
+
+        // Photo Gallery Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const totalSlides = slides.length;
+
+        // Initialize gallery dots
+        function initGalleryDots() {
+            const dotsContainer = document.getElementById('galleryDots');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'gallery-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Update gallery display
+        function updateGallery() {
+            const slidesContainer = document.getElementById('gallerySlides');
+            const dots = document.querySelectorAll('.gallery-dot');
+            
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Change slide function
+        function changeSlide(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+            
+            updateGallery();
+        }
+
+        // Go to specific slide
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateGallery();
+        }
+
+        // Auto-advance slides
+        function autoAdvance() {
+            changeSlide(1);
+        }
+
+        // Initialize gallery when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initGalleryDots();
+            updateGallery();
+            
+            // Auto-advance every 5 seconds
+            setInterval(autoAdvance, 5000);
+        });
+
+        // Touch/swipe functionality for mobile
+        let startX = 0;
+        let endX = 0;
+
+        document.getElementById('photoGallery').addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        });
+
+        document.getElementById('photoGallery').addEventListener('touchend', function(e) {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left - next slide
+                } else {
+                    changeSlide(-1); // Swipe right - previous slide
+                }
+            }
+        }
+    </script>
     <section id="old-age-home" class="section">
         <div class="container">
             <h2 class="section-title">Our Old Age Home Services</h2>
@@ -181,6 +328,22 @@
             </div>
         </div>
     </section>
+    <section id="support-us" class="section">
+        <div class="container">
+            <h2 class="section-title">Support Our Cause</h2>
+            <p class="section-description" style="text-align: center; margin-bottom: 2rem; color: #555555;">
+                Your generosity helps us provide a comfortable and caring home for our beloved seniors.
+                Every contribution, no matter how small, makes a significant difference.
+            </p>
+    
+            <div class="bank-details-card">
+                <h3>Bank Transfer Details</h3>
+                <p><strong>Bank Name:</strong>CSB BANK</p>
+                <p><strong>Account Name:</strong>RAM ARAVINDAR MADASAWMY</p>
+                <p><strong>Account Number:</strong> 0306 07166479 190001</p>
+                <p><strong>IFSC Code:</strong> CSBK0000306</p>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container footer-content">
@@ -208,10 +371,23 @@
             <div class="footer-section">
                 <h3>Connect With Us</h3>
                 <p>Follow us on social media for updates.</p>
-                </div>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 RamRavindar Trust. All rights reserved.</p>
+        </div>
+        <div class="porygon-solutions">
+            <p>Website by <a href="#" target="_blank">Porygon Solutions</a></p>
+            <div class="social-links">
+                <a href="porygon" target="_blank" class="social-link">
+                    <span class="social-icon">📷</span>
+                    <span>Instagram</span>
+                </a>
+                <a href="mailto:porygonsolutions@gmail.com" class="social-link">
+                    <span class="social-icon">📧</span>
+                    <span>Email Us</span>
+                </a>
+            </div>
         </div>
     </footer>
 
@@ -248,4 +424,5 @@
         });
     </script>
 </body>
+<script src="script.js"></script>
 </html>
