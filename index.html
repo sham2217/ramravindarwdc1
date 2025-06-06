@@ -3,116 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MRAMRAVINDAR TRUST</title>
+    <title>RamRavindar Trust - Community Services</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-    <header>
-        <h1>MRAMRAVINDAR TRUST</h1>
-        <h3></h3>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
-            <li><a href="#admissions"><i class="fas fa-user-plus"></i> Admissions</a></li>
-            <li><a href="#facilities"><i class="fas fa-building"></i> Facilities</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">RamRavindar Trust</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services-overview" class="nav-link">Services</a></li>
+                <li><a href="#matrimony" class="nav-link">Matrimony</a></li>
+                <li><a href="#transport" class="nav-link">Transport</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
-    
-    <main>
-        <section id="home">
-            <h2>Welcome to SBOA Coimbatore</h2>
-            <p>We are dedicated to providing quality education and holistic development for our students. SBOA Matriculation Higher Secondary School offers a nurturing environment where students can excel academically and grow personally.</p>
-            <img src = "main building.jpg" alt="Main Building" class="main-building">
-            
-            <div class="highlights-container">
-                <div class="highlight">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Academic Excellence</h3>
-                    <p>Consistently achieving outstanding results in board examinations.</p>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>RamRavindar Trust: Serving Our Community</h1>
+            <p>Dedicated to providing essential services and fostering a supportive environment for all.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services-overview" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Comprehensive Services</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;">
+                RamRavindar Trust offers a wide range of basic and essential services to uplift and support the community. Our initiatives cover key areas including an **Old Age Home**, **Matrimony Service**, and **Transportation**.
+            </p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">🏠</div>
+                    <h3>Old Age Home</h3>
+                    <p>Providing basic care and support for seniors, fostering a sense of home and belonging.</p>
                 </div>
-                <div class="highlight">
-                    <i class="fas fa-users"></i>
-                    <h3>Expert Faculty</h3>
-                    <p>Dedicated teachers committed to student success.</p>
+                <div class="overview-card">
+                    <div class="card-icon">💒</div>
+                    <h3>Matrimony Service</h3>
+                    <p>Assisting with matrimonial services and other ceremonies.</p>
                 </div>
-                <div class="highlight">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Modern Facilities</h3>
-                    <p>State-of-the-art infrastructure for enhanced learning.</p>
+                <div class="overview-card">
+                    <div class="card-icon">🚐</div>
+                    <h3>Transportation</h3>
+                    <p>Offering reliable transport solutions for community members, especially for medical and essential needs.</p>
                 </div>
             </div>
-            
-            <a href="./admissions.html" class="button">Apply Now</a>
-        </section>
+        </div>
+    </section>
 
-        <section id="about-preview">
-            <h2>About Us</h2>
-            <p>Founded with a vision to provide excellence in education, SBOA Matriculation Higher Secondary School Coimbatore has established itself as one of the premier educational institutions in the region.</p>
-            <p>Learn more about our history, mission, and values.</p>
-            <a href="./about.html" class="button">Learn More</a>
-        </section>
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About RamRavindar Trust</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 style="color: #2c5282; margin-bottom: 1rem;">Background</h3>
+                    <p>RamRavindar Trust is a dedicated non-profit organization committed to serving the diverse needs of our community. Established with a vision to create a positive impact, we strive to make essential services accessible to everyone, fostering a compassionate and supportive environment.</p>
 
-        <section id="admissions-preview">
-            <h2>Admissions</h2>
-            <p>We welcome applications from students who are eager to learn and grow in our nurturing educational environment. Our admission process is designed to identify students who will thrive in our academic community.</p>
-            <p>Find out how to apply for admission to our school.</p>
-            <a href="./admissions.html" class="button">Admission Details</a>
-        </section>
+                    <h3 style="color: #2c5282; margin: 2rem 0 1rem;">Mission</h3>
+                    <p>Our mission is to empower individuals and strengthen the community by providing crucial basic services, including an old age home for the vulnerable, support for matrimonial events, and accessible transportation.</p>
 
-        <section id="facilities-preview">
-            <h2>Facilities</h2>
-            <p>Our campus is equipped with modern facilities including well-equipped classrooms, laboratories, sports grounds, and more to support all aspects of student development.</p>
-            <p>Explore the facilities we offer to our students.</p>
-            <a href="./facilities.html" class="button">View Facilities</a>
-        </section>
+                    <h3 style="color: #2c5282; margin: 2rem 0 1rem;">Vision</h3>
+                    <p>We envision a community where every individual has access to fundamental support and opportunities to thrive. We aim to be a leading organization in fostering well-being, connectivity, and resilience among our neighbors.</p>
+                </div>
+                <div class="about-image visible" style="background-image: url('Entrance 1.jpg');">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="contact-preview">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or would like to learn more about our school, please don't hesitate to reach out. Our admissions office is here to help.</p>
+    <section id="old-age-home" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Old Age Home Services</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 2rem;">
+                Our **old age home** provides a nurturing and supportive environment for seniors, ensuring their comfort, dignity, and well-being. We focus on creating a true home away from home.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">🏥</div>
+                    <div class="service-content">
+                        <h3>Personalized Senior Care</h3>
+                        <p>We offer compassionate basic care, assisting with daily needs and ensuring a comfortable living environment for our elderly residents, including personal hygiene assistance and medication reminders.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">🎯</div>
+                    <div class="service-content">
+                        <h3>Engaging Activities & Support</h3>
+                        <p>We organize engaging activities and social programs, such as yoga, light exercises, indoor games, and cultural events, to promote mental and emotional well-being, fostering a strong sense of community and connection among residents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="matrimony" class="section">
+        <div class="container">
+            <h2 class="section-title">Matrimony Services</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 2rem;">
+                Our **matrimony service** is dedicated to facilitating introductions between individuals seeking life partners, helping them connect and find their compatible match.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">💖</div>
+                    <div class="service-content">
+                        <h3>Connecting Compatible Individuals</h3>
+                        <p>We assist individuals in connecting with potential life partners, focusing on compatibility and shared values to foster meaningful relationships for matrimony.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="transport" class="section">
+        <div class="container">
+            <h2 class="section-title">Transport Services</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 2rem;">
+                Our **transport services** ensure connectivity and accessibility for community members, helping them reach their destinations safely and efficiently.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">🚑</div>
+                    <div class="service-content">
+                        <h3>Emergency Transport Assistance</h3>
+                        <p>Offering limited emergency transport assistance for medical situations to local healthcare facilities, ensuring timely access to necessary care.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">🚌</div>
+                    <div class="service-content">
+                        <h3>Group & Tour Transportation</h3>
+                        <p>Facilitating transportation for community groups attending events, cultural programs, or outreach initiatives. We also organize tours to popular destinations like Ooty and Kodaikanal from Kovai, local tourist spots in Kovai, and various pilgrimage places, ensuring convenient travel for all participants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 2rem;">
+                We'd love to hear from you! Reach out to us for inquiries, support, or to learn more about our initiatives.
+            </p>
+
             <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> Address: [School Address], Coimbatore, Tamil Nadu</p>
-                <p><i class="fas fa-phone"></i> Phone: [School Phone Number]</p>
-                <p><i class="fas fa-envelope"></i> Email: [School Email]</p>
+                <div class="contact-item visible">
+                    <div class="card-icon">📍</div>
+                    <h3>Our Location</h3>
+                    <p>123 Trust Avenue, Community City, 560001</p>
+                </div>
+                <div class="contact-item visible">
+                    <div class="card-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:madasamy43@yahoo.co.in" style="color: #2c5282;">madasamy43@yahoo.co.in</a></p>
+                </div>
+                <div class="contact-item visible">
+                    <div class="card-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+919894122753" style="color: #2c5282;">+91 9894122753</a></p>
+                </div>
             </div>
-            <a href="./contact.html" class="button">Contact Details</a>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="footer-content">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
             <div class="footer-section">
-                <h3>SBOA Matriculation Higher Secondary School</h3>
-                <p>Providing quality education since [Year]</p>
+                <h3>RamRavindar Trust</h3>
+                <p>Dedicated to community welfare through essential services.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./admissions.html">Admissions</a></li>
-                    <li><a href="./facilities.html">Facilities</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services-overview">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#old-age-home">Old Age Home</a></li>
+                    <li><a href="#matrimony">Matrimony Service</a></li>
+                    <li><a href="#transport">Transportation</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                <p>Follow us on social media for updates.</p>
                 </div>
-            </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 SBOA Matriculation Higher Secondary School. All Rights Reserved.</p>
+            <p>&copy; 2025 RamRavindar Trust. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            const hiddenElements = document.querySelectorAll('.overview-card, .service-card, .about-text, .about-image, .contact-item');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
