@@ -78,159 +78,47 @@
                     <h3 style="color: #2c5282; margin: 2rem 0 1rem;">Vision</h3>
                     <p>We envision a community where every individual has access to fundamental support and opportunities to thrive. We aim to be a leading organization in fostering well-being, connectivity, and resilience among our neighbors.</p>
                 </div>
-                <div class="about-image visible" style="background-image: url('Entrance 1.jpg');">
+            </div>
+            <div class="photo-gallery">
+                <div class="gallery-container" id="photoGallery">
+                    <div class="gallery-slides">
+                        <div class="gallery-slide">
+                            <img src="./Photos/Entrance 1.JPG" alt="Entrance view of the trust building">
+                            <div class="slide-overlay">
+                                <h3 class="slide-title">Entrance View</h3>
+                                <p class="slide-description">Our residents love spending time in the garden, enjoying the fresh air and sunshine.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="./Photos/gate1.JPG" alt="Front view of the trust building">
+                            <div class="slide-overlay">
+                                <h3 class="slide-title">Front View</h3>
+                                <p class="slide-description">Comfortable spaces for reading, reflection, and peaceful solitude are always available.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="./Photos/side1.JPG" alt="Side view with a fish tank">
+                            <div class="slide-overlay">
+                                <h3 class="slide-title">Side View</h3>
+                                <p class="slide-description">Engaging craft sessions help stimulate minds and foster community among residents.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="./Photos/Pyramid.JPG" alt="Pyramid structure at the trust">
+                            <div class="slide-overlay">
+                                <h3 class="slide-title">Pyramid</h3>
+                                <p class="slide-description">Birthdays and special occasions are cherished moments, celebrated with joy and togetherness.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="gallery-nav prev" onclick="changeSlide(-1)">❮</button>
+                    <button class="gallery-nav next" onclick="changeSlide(1)">❯</button>
                 </div>
+                <div class="gallery-dots" id="galleryDots"></div>
             </div>
-        </div>
-        <div class="photo-gallery">
-            <div class="gallery-container" id="photoGallery">
-                <div class="gallery-slides">
-                    <div class="gallery-slide">
-                        <img src="Entrance1.JPG" alt="Entrance-view">
-                        <div class="slide-overlay">
-                            <h3 class="slide-title">Entrance-view</h3>
-                            <p class="slide-description">Our residents love spending time in the garden, enjoying the fresh air and sunshine.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="fr1.JPG" alt="front-view">
-                        <div class="slide-overlay">
-                            <h3 class="slide-title">Front-view</h3>
-                            <p class="slide-description">Comfortable spaces for reading, reflection, and peaceful solitude are always available.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="sd1.JPG" alt="fish-tanak">
-                        <div class="slide-overlay">
-                            <h3 class="slide-title">Side-View</h3>
-                            <p class="slide-description">Engaging craft sessions help stimulate minds and foster community among residents.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="ph.JPG" alt="Residents celebrating a birthday together">
-                        <div class="slide-overlay">
-                            <h3 class="slide-title">Pyramid</h3>
-                            <p class="slide-description">Birthdays and special occasions are cherished moments, celebrated with joy and togetherness.</p>
-                        </div>
-                    </div>
-                    </div>
-        
-                <button class="gallery-nav prev" onclick="changeSlide(-1)">❮</button>
-                <button class="gallery-nav next" onclick="changeSlide(1)">❯</button>
-            </div>
-            <div class="gallery-dots" id="galleryDots"></div>
         </div>
     </section>
-    <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.getElementById('mobile-menu');
-            const navMenu = document.getElementById('nav-menu');
 
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    mobileMenuToggle.classList.toggle('active');
-                });
-            }
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                });
-            });
-        });
-
-        // Photo Gallery Functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.gallery-slide');
-        const totalSlides = slides.length;
-
-        // Initialize gallery dots
-        function initGalleryDots() {
-            const dotsContainer = document.getElementById('galleryDots');
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'gallery-dot';
-                if (i === 0) dot.classList.add('active');
-                dot.onclick = () => goToSlide(i);
-                dotsContainer.appendChild(dot);
-            }
-        }
-
-        // Update gallery display
-        function updateGallery() {
-            const slidesContainer = document.getElementById('gallerySlides');
-            const dots = document.querySelectorAll('.gallery-dot');
-            
-            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
-
-        // Change slide function
-        function changeSlide(direction) {
-            currentSlide += direction;
-            
-            if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            } else if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
-            }
-            
-            updateGallery();
-        }
-
-        // Go to specific slide
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateGallery();
-        }
-
-        // Auto-advance slides
-        function autoAdvance() {
-            changeSlide(1);
-        }
-
-        // Initialize gallery when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            initGalleryDots();
-            updateGallery();
-            
-            // Auto-advance every 5 seconds
-            setInterval(autoAdvance, 5000);
-        });
-
-        // Touch/swipe functionality for mobile
-        let startX = 0;
-        let endX = 0;
-
-        document.getElementById('photoGallery').addEventListener('touchstart', function(e) {
-            startX = e.touches[0].clientX;
-        });
-
-        document.getElementById('photoGallery').addEventListener('touchend', function(e) {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const threshold = 50;
-            const diff = startX - endX;
-            
-            if (Math.abs(diff) > threshold) {
-                if (diff > 0) {
-                    changeSlide(1); // Swipe left - next slide
-                } else {
-                    changeSlide(-1); // Swipe right - previous slide
-                }
-            }
-        }
-    </script>
     <section id="old-age-home" class="section">
         <div class="container">
             <h2 class="section-title">Our Old Age Home Services</h2>
@@ -313,7 +201,7 @@
                 <div class="contact-item visible">
                     <div class="card-icon">📍</div>
                     <h3>Our Location</h3>
-                    <p>123 Trust Avenue, Community City, 560001</p>
+                    <a href="https://maps.app.goo.gl/YourActualGoogleMapsLink" target="_blank" style="color: #2c5282;">42/85, Maharani Avenue, 5th Street, Vadavalli, Coimbatore - 641 041</a>
                 </div>
                 <div class="contact-item visible">
                     <div class="card-icon">📧</div>
@@ -328,6 +216,7 @@
             </div>
         </div>
     </section>
+
     <section id="support-us" class="section">
         <div class="container">
             <h2 class="section-title">Support Our Cause</h2>
@@ -338,10 +227,11 @@
     
             <div class="bank-details-card">
                 <h3>Bank Transfer Details</h3>
-                <p><strong>Bank Name:</strong>CSB BANK</p>
-                <p><strong>Account Name:</strong>RAM ARAVINDAR MADASAWMY</p>
+                <p><strong>Bank Name:</strong> CSB BANK</p>
+                <p><strong>Account Name:</strong> RAM ARAVINDAR MADASAWMY</p>
                 <p><strong>Account Number:</strong> 0306 07166479 190001</p>
                 <p><strong>IFSC Code:</strong> CSBK0000306</p>
+            </div>
         </div>
     </section>
 
@@ -368,18 +258,14 @@
                     <li><a href="#transport">Transportation</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <p>Follow us on social media for updates.</p>
-            </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 RamRavindar Trust. All rights reserved.</p>
+            <p>© 2025 RamRavindar Trust. All rights reserved.</p>
         </div>
         <div class="porygon-solutions">
-            <p>Website by <a href="#" target="_blank">Porygon Solutions</a></p>
+            <p>Website by <a href="https://porygonsolutions.com" target="_blank">Porygon Solutions</a></p>
             <div class="social-links">
-                <a href="porygon" target="_blank" class="social-link">
+                <a href="https://www.instagram.com/porygonsolutions" target="_blank" class="social-link">
                     <span class="social-icon">📷</span>
                     <span>Instagram</span>
                 </a>
@@ -392,6 +278,7 @@
     </footer>
 
     <script>
+        // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.getElementById('mobile-menu');
             const navMenu = document.getElementById('nav-menu');
@@ -411,6 +298,7 @@
                 });
             });
 
+            // Intersection Observer for fade-in effect (if `visible` class implies this)
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -422,7 +310,100 @@
             const hiddenElements = document.querySelectorAll('.overview-card, .service-card, .about-text, .about-image, .contact-item');
             hiddenElements.forEach((el) => observer.observe(el));
         });
+
+        // Photo Gallery Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const totalSlides = slides.length;
+        const slidesContainer = document.querySelector('.gallery-slides'); // Corrected selector
+
+        // Initialize gallery dots
+        function initGalleryDots() {
+            const dotsContainer = document.getElementById('galleryDots');
+            dotsContainer.innerHTML = ''; // Clear existing dots to prevent duplication
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'gallery-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Update gallery display
+        function updateGallery() {
+            const dots = document.querySelectorAll('.gallery-dot');
+            
+            if (slidesContainer) { // Ensure slidesContainer exists
+                slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Change slide function
+        function changeSlide(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+            
+            updateGallery();
+        }
+
+        // Go to specific slide
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateGallery();
+        }
+
+        // Auto-advance slides
+        function autoAdvance() {
+            changeSlide(1);
+        }
+
+        // Initialize gallery when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initGalleryDots();
+            updateGallery();
+            
+            // Auto-advance every 5 seconds
+            setInterval(autoAdvance, 5000);
+        });
+
+        // Touch/swipe functionality for mobile
+        let startX = 0;
+        let endX = 0;
+
+        const photoGalleryElement = document.getElementById('photoGallery');
+        if (photoGalleryElement) { // Ensure the element exists before attaching listeners
+            photoGalleryElement.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+            });
+
+            photoGalleryElement.addEventListener('touchend', function(e) {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+        }
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left - next slide
+                } else {
+                    changeSlide(-1); // Swipe right - previous slide
+                }
+            }
+        }
     </script>
 </body>
-<script src="script.js"></script>
 </html>
